@@ -8,7 +8,7 @@
 
 public struct Telegram {
     private(set) var users: [User] = []
-    private(set) var chats: [Chat] = []
+    private(set) var chats: [Chat?] = []
     
     public init() {
         
@@ -25,7 +25,7 @@ public struct Telegram {
     }
 
     public func printAllChats() {
-        for chat in chats {
+        for case let chat? in chats {
             chat.printChat()
         }
     }
